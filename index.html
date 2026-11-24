@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>程序员做饭指南</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <style>
+    /* 微调侧边栏宽度，避免长菜名频繁换行 */
+    .sidebar { width: 320px; }
+    .content { left: 320px; }
+    @media screen and (max-width: 768px) {
+      .sidebar { width: 280px; }
+      .content { left: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div id="app">菜谱加载中...</div>
+  <script>
+    window.$docsify = {
+      name: '🍳 程序员做饭指南',
+      repo: 'czzor3-hub/HowToCook',
+      // 直接复用根目录 README.md 作为左侧目录，后续 Sync Fork 自动同步，无需手动维护
+      loadSidebar: 'README.md',
+      alias: {
+        '/.*/README.md': '/README.md'
+      },
+      // 自动生成当前菜谱页的小标题目录
+      subMaxLevel: 2,
+      // 切换菜谱时自动回到页面顶部
+      auto2top: true,
+      // 全文搜索配置
+      search: {
+        maxAge: 86400000, // 缓存一天
+        paths: 'auto',
+        placeholder: '🔍 搜索菜名或食材...',
+        noData: '找不到相关菜谱',
+        depth: 3
+      }
+    }
+  </script>
+  <!-- Docsify 核心与插件 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
+</body>
+</html>
